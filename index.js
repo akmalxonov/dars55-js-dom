@@ -74,21 +74,21 @@ stopBtnEl.addEventListener("click", () => {
 
 const loader2Element = document.querySelector(".loader2")
 const containerEl = document.querySelector(".container")
-const promise0 = new Promise((resolve,reject)=>{
-    setTimeout(()=>{
+const promise0 = new Promise((resolve, reject) => {
+    setTimeout(() => {
         resolve("go")
         // reject("no")
-    },10000)
+    }, 10000)
 })
-async function start(){
-    try{
+async function start() {
+    try {
         let res = await promise0
         containerEl.style.display = "block"
         document.body.style.background = "white"
-    }catch(err){
+    } catch (err) {
         console.log(err);
         alert("error")
-    }finally{
+    } finally {
         loader2Element.style.display = "none"
     }
 }
@@ -195,20 +195,48 @@ f5()
 // 
 
 const countElement2 = document.querySelector("#count2")
-const inputElement =document.querySelector("#input")
+const inputElement = document.querySelector("#input")
 const btnElement = document.querySelector("#btn")
 
-btnElement.addEventListener("click",()=>{
+btnElement.addEventListener("click", () => {
     countElement2.textContent = inputElement.value
     inputElement.value = ""
-    let id = setInterval(()=>{
-        if(countElement2.textContent === "0"){
+    let id = setInterval(() => {
+        if (countElement2.textContent === "0") {
             countElement2.textContent = "tugadi"
             clearInterval(id)
             return
-        }else{
+        } else {
             countElement2.textContent--
             return
         }
-    },1000)
+    }, 1000)
 })
+
+
+
+// kanspekt
+
+
+// JSON – bu ma’lumotlarni saqlash va uzatish uchun ishlatiladigan yengil format.
+//  U JavaScript obyekti sintaksisiga asoslangan,
+//  lekin boshqa tillarda ham qo‘llaniladi.
+
+// Kalit-qiymat juftliklari ko‘rinishida yoziladi
+
+// JSON paddershka qiladi String // Number // Boolean // Array // Object // null
+
+// Foydalanish:
+// Ma’lumotlarni server va mijoz orasida uzatishda.
+// Fayllarda saqlash uchun (.json format).
+
+
+// Promise – bu JavaScript’dagi asinxron operatsiyalarni boshqarish vositasi.
+// Bu kelajakda qiymat qaytaruvchi obyekt.    {vadaboz}
+
+// Holatlar:
+// Pending: Dastlabki holat, natija hali ma’lum emas.  kutish 
+// Fulfilled: Vada bajarilgan va qiymat qaytarilgan.   fadada turdi
+// Rejected: Vada bajarilmadi va xato qaytarildi.      fadada turmadi
+
+// async/await  Promise-larni qulayroq boshqarish uchun ishlatiladi.
